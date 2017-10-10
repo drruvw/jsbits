@@ -1,0 +1,73 @@
+    <!DOCTYPE html>
+<html>
+<head>
+	<title>gallery</title>
+	<style type="text/css">
+        ul li {
+            list-style-type: none;
+            display: inline-block;
+            
+        }
+        img {
+            width: 100%;
+            height: auto;
+        }
+/*
+		div{
+			width:300px;
+			border:2px solid black;
+			position:absolute;
+			left:40%;
+			top:30%;
+		}
+*/
+	</style>
+</head>
+<body>
+	<ul id ="gallery">
+		<li><a href="#"><img src="http://images.freeimages.com/images/small-previews/d2f/tulips-1400882.jpg" alt="img1"></a></li>
+		<li><a href="#"><img src="http://images.freeimages.com/images/small-previews/7bc/bald-eagle-1-1400106.jpg" alt="img2"></a></li>
+		<li><a href="#"><img src="http://images.freeimages.com/images/small-previews/9a4/large-pumpkin-1387927.jpg" alt="img3"></a></li>
+		<li><a href="#"><img src="http://images.freeimages.com/images/small-previews/1ad/tractor-2-1386664.jpg" alt="img4"></a></li>
+        <li><a href="#"><img src="http://images.freeimages.com/images/small-previews/47a/snow-1380336.jpg" alt="img5"></a></li>
+        <li><a href="#"><img src="http://images.freeimages.com/images/small-previews/371/swiss-mountains-1362975.jpg" alt="img6"></a></li>
+        <li><a href="#"><img src="http://images.freeimages.com/images/small-previews/515/autumn-2-1382506.jpg" alt="img7"></a></li>
+        <li><a href="#"><img src="http://images.freeimages.com/images/small-previews/fa7/in-prayer-1313108.jpg" alt="img8"></a></li>
+        <li><a href="#"><img src="http://images.freeimages.com/images/small-previews/b3d/flowers-1375316.jpg" alt="img9"></a></li>
+        <li><a href="#"><img src="http://images.freeimages.com/images/small-previews/b8d/irish-landscape-1393571.jpg" alt="img10"></a></li>
+	</ul>
+<!--
+	<div>
+		<img src="images/download-1.jpg">
+	</div>
+-->
+	<script type="text/javascript">
+		var imageGallery = document.getElementById("gallery");
+		function popBox(ev){
+			console.log("you clicked on ul element ",ev);
+            console.log(ev.srcElement);
+            // create pop box
+            var popdiv = document.createElement("div");
+            popdiv.style.width = "300px";
+            popdiv.style.border = "2px solid black";
+            popdiv.style.position = "absolute";
+            popdiv.style.left = "40%";
+            popdiv.style.top = "30%";
+            
+            var popimg = ev.srcElement;
+//            document.createElement("img");
+//            popimg.setAttribute("src", "images/download-1.jpg");
+            
+            popdiv.appendChild(popimg);
+            document.body.appendChild(popdiv);
+
+		}
+		imageGallery.addEventListener("click",popBox);
+
+	</script>
+    
+    <script>
+        
+    </script>
+</body>
+</html>
